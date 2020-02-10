@@ -1,0 +1,16 @@
+// 体验优化
+// -wxss中带有overflow: scroll的元素，在iOS下需要设置-webkit-overflow-scrolling: touch样式
+.u-scroll-element {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+// -position: fixed的可交互组件渲染在安全区域内(iPhone X 兼容)
+.u-fixed-element {
+  position: fixed;
+  padding-bottom: env(safe-area-inset-bottom);
+  // padding-bottom: constant(safe-area-inset-bottom);
+}
+
+// 字体
+// 样式
+// 布局

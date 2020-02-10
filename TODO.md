@@ -1,0 +1,5 @@
+- 接入redux
+- 接入taro-ui
+- 接入lodash.js
+- 封装loading
+- 封装请求api

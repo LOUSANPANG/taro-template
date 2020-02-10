@@ -1,0 +1,26 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "snyd-pro",
+  "description": "司南运动专业版",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+		"enhance": false,
+    "postcss": false,
+    "minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+  },
+  "compileType": "miniprogram"
+}
