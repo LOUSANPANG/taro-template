@@ -4,5 +4,5 @@
 import HTTPREQUEST from "./http"
 
 export const IndexTest = (postData) => {
-  return HTTPREQUEST.get('/todos/11', postData)
+  return HTTPREQUEST.get('/todos/1', postData)
 }

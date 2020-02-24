@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
+import _ from 'lodash'
 import './index.scss'
 
 import {
@@ -34,6 +35,7 @@ class Index extends Component {
   }
 
   componentDidMount () {
+    // 服务用法 - 测试
     this.setState({ showLoading: true })
     IndexTest({}).then(res => {
       console.log('success:', res)
@@ -42,6 +44,10 @@ class Index extends Component {
       console.log('fail:', err)
       this.setState({ showLoading: false })
     })
+
+    // 测试lodash
+    let testLodash = _.chunk(['a', 'b', 'c', 'd'], 2)
+    console.log(testLodash);
   }
 
   render () {
