@@ -1,8 +1,9 @@
-import Taro from "@tarojs/taro"
+// @description {interceptors} 服务拦截判断
 
-import ShowToast from '../utils/show_toast'
-import { pageToLogin } from "./utils"
-import HTTP_STATUS from './config'
+import Taro from "@tarojs/taro"
+import ShowToast from '../../utils/show_toast'
+import { pageToLogin } from "../serversUtils/utilsToLogin"
+import HTTP_STATUS from './statusCode'
 
 const customInterceptor = (chain) => {
 

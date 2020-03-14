@@ -1,5 +1,5 @@
 const config = {
-  projectName: 'snyd-pro',
+  projectName: 'frame_tarotemplate',
   date: '2020-1-13',
   onePxTransform: true,
   unitPrecision: 5,

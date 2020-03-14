@@ -1,3 +1,5 @@
+// @description {statusCode} 服务状态码
+
 const HTTP_STATUS = {
   SUCCESS: 200,
   CREATED: 201,

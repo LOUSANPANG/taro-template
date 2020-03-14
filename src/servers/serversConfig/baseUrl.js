@@ -1,3 +1,5 @@
+// @description {baseUrl} 基础路由环境
+
 const getBaseUrl = () => {
   let BASE_URL = '';
   if (process.env.NODE_ENV === 'development') {

@@ -9,7 +9,8 @@ import {
   minus,
   asyncAdd
 } from '../../store/actions/test.js'
-import { IndexTest } from '../../servers/servers'
+import { IndexTest } from '../../servers/serversCollection/index/servers'
+import { setStorage } from '../../utils/storage_operate'
 import Loading from '../../components/Loading/Loading'
 
 @connect(({ test }) => ({
@@ -50,6 +51,15 @@ class Index extends Component {
     console.log(testLodash);
   }
 
+  // 测试缓存
+  testSetStorage = async () => {
+    let status = await setStorage('test', {'a': 111})
+    console.log('期待存储结果', status)
+  }
+  testGetStorage = () => {
+
+  }
+
   render () {
     const { showLoading } = this.state
 
@@ -61,6 +71,9 @@ class Index extends Component {
         <Button onClick={this.props.dec}>-</Button>
         <Button onClick={this.props.asyncAdd}>async</Button>
         <View>{this.props.test.num}</View>
+
+        <Button onClick={this.testSetStorage}>设置缓存</Button>
+        <Button onClick={this.testGetStorage}>获取缓存</Button>
       </View>
     )
   }

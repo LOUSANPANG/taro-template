@@ -1,7 +1,7 @@
-import Taro from "@tarojs/taro";
-/**
- * @description 获取当前页url
- */
+// @description {toLogin} 权限问题跳转登录页
+
+import Taro from "@tarojs/taro"
+
 export const getCurrentPageUrl = () => {
   let pages = Taro.getCurrentPages()
   let currentPage = pages[pages.length - 1]

@@ -1,3 +1,5 @@
+// @description {http} 请求类型封装库
+
 import Taro from '@tarojs/taro'
 import getBaseUrl from './baseUrl'
 import interceptors from './interceptors'
