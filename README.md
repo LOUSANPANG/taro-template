@@ -14,10 +14,11 @@
 - 使用`Lodash.js`辅助开发
 
 ### 文件命名
-- pages下遵循`type-name.tsx`，例如*shop-list.jsx*。
-- pages下 建立 ComponentPages 组件文件夹，代表每个组件页面的公共组件。
-- 公共组件文件命名遵循 Pascal 命名法，例如 `ReservationCard.jsx`
-- 普通文件utils遵循`type_name.js`，例如*request_api.js*、*request_api.sass*
+- 页面文件 命名遵循`type-name.tsx` 例如`/pages/shop/shop-list.jsx`
+- 每个页面的公共组件 命名遵循**大驼峰** 例如`/pages/index/Components/IndexHead.jsx`.
+- 公共组件文件 命名遵循**大驼峰** 例如 `/Component/Loading/Loading.jsx`
+- 辅助文件 命名遵循**小驼峰** 例如 `/servers/serversConfig/statusCode.js`
+- 工具文件 遵循`type_name.js`，例如`/utils/show_toast.js`
 
 ### 文件后缀
 - 组件文件使用`jsx`作为文件后缀
@@ -26,7 +27,8 @@
 - 特殊文件根据框架或组件要求选择后缀`.weapp.js`
 
 ### 封装功能组件导出变量
-- 功能性文件如(封装taro.showToast()), 变量命名为大驼峰规范.以便在组件中使用.
+- 功能性文件如(封装taro.showToast()), 变量命名为**大驼峰**规范.以便在组件中使用.
+- 常量使用 `_AABB`
 
 ### 插件方面
 - 使用`VScode`的`Prettier`代码格式化程序
@@ -47,6 +49,8 @@
 - 使用`taro-ui`在每一次长时间等待等处理方面进行了加载动画。
 
 ### rudex封装
+
+### [其他功能封装详见更新计划日志](./TODO.md)
 
 
 --------------------------

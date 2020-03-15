@@ -11,13 +11,14 @@ const store = configStore()
 class App extends Component {
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/test/test'
     ],
     window: {
       backgroundColor: '#fff',
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '司南运动专业版',
+      navigationBarTitleText: 'Taro个人习惯开发模版',
       navigationBarTextStyle: 'black',
       onReachBottomDistance: 50
     },
