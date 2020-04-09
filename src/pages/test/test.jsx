@@ -11,6 +11,7 @@ import {
 } from '../../store/actions/test.js' // 测试redux
 import { TestServers } from '../../servers/serversCollection/test/servers' // 测试服务
 import Loading from '../../components/Loading/Loading' // 测试loading
+import DetectTool from '../../utils/detect_version' // 测试版本更新
 
 
 @connect(({ test }) => ({
@@ -50,7 +51,10 @@ class Test extends Component {
 
     // 测试lodash
     let testLodash = _.chunk(['a', 'b', 'c', 'd'], 2)
-    console.log('lodash test:', testLodash);
+    console.log('lodash test:', testLodash)
+
+    // 测试版本更新
+    DetectTool.DetectVersionUpdate()
   }
 
 
