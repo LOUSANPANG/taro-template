@@ -7,20 +7,21 @@ import interceptors from './interceptors'
 interceptors.forEach(interceptorItem => Taro.addInterceptor(interceptorItem))
 
 class httpRequest {
+
   /**
-   * 参数一
+   * 请求
    * @param {object} params
    * @param {string} params.url
    * @param {Object/String/ArrayBuffer} params.data
    * @param {string} params.contentType header
-   * 参数二
    * @param {string} method
    */
+
   baseOptions(params, method = "GET") {
-    let { url, data } = params;
-    const BASE_URL = getBaseUrl(url);
-    let contentType = "application/json";
-    contentType = params.contentType || contentType;
+    let { url, data } = params
+    const BASE_URL = getBaseUrl(url)
+    let contentType = "application/json"
+    contentType = params.contentType || contentType
     const option = {
       url: BASE_URL + url,
       data: data,
@@ -29,28 +30,32 @@ class httpRequest {
         'content-type': contentType,
         'Authorization': Taro.getStorageSync('Authorization')
       }
-    };
-    return Taro.request(option);
+    }
+    return Taro.request(option)
   }
+
 
   get(url, data = "") {
-    let option = { url, data };
-    return this.baseOptions(option);
+    let option = { url, data }
+    return this.baseOptions(option)
   }
+
 
   post(url, data, contentType) {
-    let params = { url, data, contentType };
-    return this.baseOptions(params, "POST");
+    let params = { url, data, contentType }
+    return this.baseOptions(params, "POST")
   }
+
 
   put(url, data = "") {
-    let option = { url, data };
-    return this.baseOptions(option, "PUT");
+    let option = { url, data }
+    return this.baseOptions(option, "PUT")
   }
 
+
   delete(url, data = "") {
-    let option = { url, data };
-    return this.baseOptions(option, "DELETE");
+    let option = { url, data }
+    return this.baseOptions(option, "DELETE")
   }
 
 }

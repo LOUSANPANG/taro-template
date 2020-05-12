@@ -16,8 +16,8 @@ const customInterceptor = (chain) => {
       return Promise.reject("请求资源不存在")
 
     } else if (res.statusCode === HTTP_STATUS.BAD_GATEWAY) {
-      ShowToast('服务端出现了问题')
-      return Promise.reject("服务端出现了问题")
+      ShowToast('系统繁忙稍后重试')
+      return Promise.reject("系统繁忙稍后重试")
 
     } else if (res.statusCode === HTTP_STATUS.FORBIDDEN) {
       Taro.setStorageSync("Authorization", "")

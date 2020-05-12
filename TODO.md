@@ -13,8 +13,6 @@
 
 #### 0.2.3
 - [x] 升级依赖2.2.3(https://github.com/NervJS/taro/blob/2.x/CHANGELOG.md)
-- [ ] 优化请求配置文件（通过参数统一结束动画加载等）
-- [ ] 优化redux
 
 #### 0.2.2
 - [x] 升级依赖2.1.3

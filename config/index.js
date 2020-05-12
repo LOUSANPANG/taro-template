@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'frame_tarotemplate',
   date: '2020-1-13',
@@ -16,6 +18,9 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
+  alias: {
+    '@src': path.resolve(__dirname, '..', 'src')
+  },
   babel: {
     sourceMap: true,
     presets: [
@@ -35,7 +40,6 @@ const config = {
       }]
     ]
   },
-  plugins: [],
   defineConstants: {
   },
   mini: {
