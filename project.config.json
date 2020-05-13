@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "snyd-pro",
-  "description": "司南运动专业版",
+  "projectname": "snyd",
+  "description": "Taro快速开发模版",
   "appid": "touristappid",
   "setting": {
     "urlCheck": false,
@@ -15,12 +15,15 @@
 		"showShadowRootInWxmlPanel": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
-		"uploadWithSourceMap": false,
+		"uploadWithSourceMap": true,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		}
   },
-  "compileType": "miniprogram"
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {}
 }

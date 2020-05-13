@@ -1,5 +1,3 @@
-const path = require('path')
-
 const config = {
   projectName: 'frame_tarotemplate',
   date: '2020-1-13',
@@ -18,9 +16,6 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  alias: {
-    '@src': path.resolve(__dirname, '..', 'src')
-  },
   babel: {
     sourceMap: true,
     presets: [
@@ -33,13 +28,14 @@ const config = {
       'transform-class-properties',
       'transform-object-rest-spread',
       ['transform-runtime', {
-        "helpers": false,
-        "polyfill": false,
-        "regenerator": true,
-        "moduleName": 'babel-runtime'
+        'helpers': false,
+        'polyfill': false,
+        'regenerator': true,
+        'moduleName': 'babel-runtime'
       }]
     ]
   },
+  plugins: [],
   defineConstants: {
   },
   mini: {

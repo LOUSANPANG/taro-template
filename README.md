@@ -11,20 +11,22 @@
 
 ### 开发环境
 - 推荐`npx` `yarn`
-- 项目中使用`Taro.js`、`Redux`、`TaroUI`作为基础框架，使用`Hooks、JavaScript`进行业务书写，使用`Sass`进行样式书写
+- 项目中使用`Taro.js`、`Redux`、`TaroUI`作为基础框架，使用`Hooks、TypeScript`进行业务书写，使用`Sass`进行样式书写
 - 使用`Lodash.js`辅助开发
 
 ### 文件命名
-- 页面文件 命名遵循`type-name.tsx` 例如`/pages/shop/shop-list.jsx`
-- 每个页面的公共组件 命名遵循**大驼峰** 例如`/pages/index/Components/IndexHead.jsx`.
-- 公共组件文件 命名遵循**大驼峰** 例如 `/Component/Loading/Loading.jsx`
-- 辅助文件 命名遵循**小驼峰** 例如 `/servers/serversConfig/statusCode.js`
+- 页面文件 命名遵循`type-name.tsx` 例如`/pages/shop/shop-list.tsx`
+- 每个页面的公共组件 命名遵循**大驼峰** 例如`/pages/index/components/IndexHead.tsx`.
+- 公共组件文件 命名遵循**大驼峰** 例如 `/component/Loading/Loading.jsx`
+- 辅助文件 命名遵循**小驼峰** 例如 `/services/servicesConfig/statusCode.js`
 - 工具文件 遵循`type_name.js`，例如`/utils/show_toast.js`
+- 声明文件 遵循`typesFoo.d.ts`，例如`/types/typesFoo.d.js` (需要配置一下tsconfig.json)
 
 ### 文件后缀
-- 组件文件使用`jsx`作为文件后缀
+- 组件文件使用`tsx`作为文件后缀
 - 样式文件使用`sass`作为文件后缀
-- 普通业务文件使用`js`作为文件后缀
+- 普通业务文件使用`ts`作为文件后缀
+- ts声明文件使用`.d.ts`作为文件后缀
 - 特殊文件根据框架或组件要求选择后缀`.weapp.js`
 
 ### 变量命名
@@ -44,7 +46,7 @@
 - 使用适用于自己的`ESlint`规则
 
 ### 代码提交方面
-- 严格参照 ` Angular Style Commit Message Conventions` 代码提交规范。 `style: :art: 代码样式格式调整`
+- 严格参照 ` Angular Style Commit Message Conventions` 代码提交规范。 `git cz`
 - 分支：开发分支`dev`、 测试分支`test`、 版本发布分支`master`
 
 

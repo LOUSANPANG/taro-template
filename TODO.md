@@ -9,7 +9,7 @@
 - [ ] 对所有组件进行各交互端兼容（微信、支付宝、rn）
 
 #### 0.3.0
-- [ ] TS编写
+- [x] TS编写
 
 #### 0.2.3
 - [x] 升级依赖2.2.3(https://github.com/NervJS/taro/blob/2.x/CHANGELOG.md)
