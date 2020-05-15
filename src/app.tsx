@@ -29,12 +29,16 @@ class App extends Component {
       'pages/test/test'
     ],
     window: {
+      navigationStyle: 'default',
       backgroundColor: '#fff',
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'Taro个人习惯开发模版',
       navigationBarTextStyle: 'black',
       onReachBottomDistance: 50
+    },
+    networkTimeout: {
+      'request': 10000
     },
     permission: {
       'scope.userLocation': {

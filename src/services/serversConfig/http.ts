@@ -1,3 +1,11 @@
+/**
+ * 网络
+ * wx.request、wx.uploadFile、wx.downloadFile 的最大并发限制是 10 个
+ * wx.connectSocket 的最大并发限制是 5 个
+ * 小程序进入后台运行后，如果 5s 内网络请求没有结束，会回调错误信息 fail interrupted
+ * 只要成功接收到服务器返回，无论 statusCode 是多少，都会进入 success 回调
+ */
+
 import Taro from '@tarojs/taro'
 import getBaseUrl from './baseUrl'
 import interceptors from './interceptors'

@@ -1,3 +1,8 @@
+/**
+ * access_token
+ * 开发者应将 AppSecret 保存到后台服务器中，通过服务器使用 getAccessToken 接口获取 access_token，并调用相关 AP
+ */
+
 import Taro from "@tarojs/taro"
 import ShowToast from '../../utils/show_toast'
 import { pageToLogin } from '../serversUtils/utilsToLogin'
