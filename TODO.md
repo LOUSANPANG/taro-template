@@ -17,6 +17,7 @@
 
 #### 0.3.1
 - [x] 动态设计导航栏及动画
+- [x] 配置目录别名
 - [x] 升级依赖2.2.6(https://github.com/NervJS/taro/releases/tag/v2.2.6)
 
 #### 0.3.0

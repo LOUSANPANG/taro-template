@@ -8,10 +8,10 @@ import {
   add,
   minus,
   asyncAdd
-} from '../../store/actions/test' // 测试redux
-import { TestServers } from '../../services/serversCollection/test/servers' // 测试服务
-import Loading from '../../components/Loading/Loading' // 测试loading
-import DetectTool from '../../utils/detect_version' // 测试版本更新
+} from '@/store/actions/test' // 测试redux
+import { TestServers } from '@/services/serversCollection/test/servers' // 测试服务
+import Loading from '@/components/Loading/Loading' // 测试loading
+import DetectTool from '@/utils/detect_version' // 测试版本更新
 
 
 const DefaultProps = {

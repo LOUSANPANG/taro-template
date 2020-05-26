@@ -34,10 +34,10 @@
 
 ```
 jsx:
-import Loading from '../../components/Loading/Loading'
+import Loading from '@/components/Loading/Loading'
 
 scss:
-@import '../../components/Loading/Loading.scss'
+@import '@/components/Loading/Loading.scss'
 ```
 
 #### 2.3 应用

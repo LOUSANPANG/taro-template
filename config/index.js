@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'frame_tarotemplate',
   date: '2020-1-13',
@@ -38,10 +40,20 @@ const config = {
   plugins: [],
   defineConstants: {
   },
+  alias: {
+    '@/assets': path.resolve(__dirname, '..', 'src/assets'),
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/pages': path.resolve(__dirname, '..', 'src/pages'),
+    '@/services': path.resolve(__dirname, '..', 'src/services'),
+    '@/store': path.resolve(__dirname, '..', 'src/store'),
+    '@/types': path.resolve(__dirname, '..', 'src/types'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils')
+  },
   mini: {
-    compile: {
-      compressTemplate: true
-    },
+    // compile: {
+    //   compressTemplate: true,
+    //   exclude: [] // 配置小程序编译过程中排除不需要经过 Taro 编译的文件，文件路径必须以源码所在 src 目录开头
+    // },
     imageUrlLoaderOption: {
       limit: 10240 // 图片都会经过 url-loader 进行处理 (x)
     },

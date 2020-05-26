@@ -4,7 +4,7 @@
  */
 
 import Taro from "@tarojs/taro"
-import ShowToast from '../../utils/show_toast'
+import ShowToast from '@/utils/show_toast'
 import { pageToLogin } from '../serversUtils/utilsToLogin'
 import HTTP_STATUS from './statusCode'
 
