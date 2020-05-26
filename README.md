@@ -110,6 +110,8 @@
 - 将`props`设置默认值、类型分析
 - `setState` 合并
 - 合理运用`componentWillPreload`进行数据预加载
+- 尽量避免在 componentDidMount 中调用 this.setState， 会导致触发更新
+- 不要在 componentWillUpdate/componentDidUpdate/render 中调用 this.setState
 - 所有定时器的回调执行时所在的页面都与设置定时器的页面一致
 - 涉及到的动画尽量避免使用本组件页面的`state`，尽量提取，并使用小程序的动画api。
 - 适当时候开启后台运行能力，后台定位

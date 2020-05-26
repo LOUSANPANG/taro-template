@@ -65,9 +65,9 @@ class Test extends Component<Props, State> {
   }
 
   componentDidMount () {
-    // 服务用法 - 测试
     this.setState({ showLoading: true })
 
+    // 测试服务
     TestServers({}).then(res => {
       console.log('servers success:', res)
       this.setState({ showLoading: false })
@@ -84,6 +84,23 @@ class Test extends Component<Props, State> {
     DetectTool.DetectVersionUpdate()
   }
 
+  // 测试动态设置导航栏
+  setNavigationBar = () => {
+    Taro.showNavigationBarLoading({
+      success: () => {
+        Taro.setNavigationBarTitle({ title: '加载中...' })
+      }
+    })
+
+    setTimeout(() => {
+      Taro.hideNavigationBarLoading({
+        success: () => {
+          Taro.setNavigationBarTitle({ title: '司南运动' })
+        }
+      })
+    }, 5000)
+  }
+
   
   public render () {
     const { showLoading } = this.state
@@ -91,10 +108,13 @@ class Test extends Component<Props, State> {
     return (
       <View className='test'>
         <Loading showLoading={ showLoading } />
+
         <Button onClick={ this.props.add }>+</Button>
         <Button onClick={ this.props.dec }>-</Button>
         <Button onClick={ this.props.asyncAdd }>async</Button>
         <View>{ this.props.test.num }</View>
+
+        <Button onClick={ this.setNavigationBar }>setNavigationBar</Button>
       </View>
     )
   }
