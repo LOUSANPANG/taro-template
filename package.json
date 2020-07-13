@@ -54,7 +54,7 @@
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0",
 		"regenerator-runtime": "0.11.1",
-		"standard-version": "^7.1.0",
+		"standard-version": "^8.0.1",
 		"taro-ui": "^2.2.4"
 	},
 	"devDependencies": {
