@@ -6,7 +6,7 @@
  */
 
 import Taro from '@tarojs/taro'
-import ShowToast from './show_toast'
+import ShowToast from '../custom_toast'
 
 
 /**
@@ -16,7 +16,7 @@ import ShowToast from './show_toast'
  * @function _:applyUpdate() 强制小程序重启并使用新版本。在小程序新版本下载完成后（即收到 onUpdateReady 回调）调用
  * @function _:onUpdateFailed() 监听小程序更新失败事件
  */
-const DetectVersionUpdate = (): void => {
+export const DetectVersionUpdate = () => {
   const _UpdateManager = Taro.getUpdateManager()
 
   _UpdateManager.onUpdateReady(function() {
@@ -34,9 +34,4 @@ const DetectVersionUpdate = (): void => {
   _UpdateManager.onUpdateFailed(function() {
     ShowToast('新版本下载失败，请尝试清空缓存重新启动', 5000)
   })
-}
-
-
-export default {
-  DetectVersionUpdate
 }

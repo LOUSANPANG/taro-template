@@ -1,0 +1,31 @@
+.skeleton-screen {
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  position: relative;
+
+  @keyframes placeHolderShimmer{
+    0% {
+      background-position: -500px 0
+    }
+    100% {
+      background-position: 500px 0
+    }
+  }
+  .skeleton {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 150px;
+    border-radius: 15px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #fff 8%, #eee 18%, #fff 33%);
+    background-size: 1200px 100px;
+  }
+}

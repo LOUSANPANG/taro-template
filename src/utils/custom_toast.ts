@@ -12,14 +12,14 @@ type Icon = 'none' | 'success' | 'loading'
 
 const ShowToast = ( title: string, duration: number = 1500, icon: Icon = 'none' ) => {
   return new Promise(( resolve, reject ) => {
-      Taro.showToast({
-          title,
-          duration,
-          icon,
-          mask: true,
-          success: resolve,
-          fail: reject
-      })
+    Taro.showToast({
+      title,
+      duration,
+      icon,
+      mask: true,
+      success: resolve,
+      fail: reject
+    })
   })
 }
 

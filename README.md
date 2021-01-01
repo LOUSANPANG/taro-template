@@ -1,162 +1,205 @@
-# 设计和前端开发规范
+## @Taro/cli 3.0.8
+- `react` `Ts`
+- `Taro-ui`
 
-## 设计稿规范
-
-### 尺寸标准
-- `750px`
-
-
---------------------------
-## 项目组织规范
-
-### 开发环境
-- 推荐`npx` `yarn`
-- 项目中使用`@tarojs/cli`、`Redux`、`TaroUI`作为基础框架，使用`?Hooks、TypeScript`进行业务书写，使用`Sass`进行样式书写
-- 使用`Lodash.js`辅助开发
-
-### 文件命名
-- 页面文件 命名遵循`type-name.tsx` 例如`/pages/shop/shop-list.tsx`
-- 每个页面的公共组件 命名遵循**大驼峰** 例如`/pages/index/components/IndexHead.tsx`.
-- 公共组件文件 命名遵循**大驼峰** 例如 `/component/Loading/Loading.jsx`
-- 辅助文件 命名遵循**小驼峰** 例如 `/services/servicesConfig/statusCode.js`
-- 工具文件 遵循`type_name.js`，例如`/utils/show_toast.js`
-- 声明文件 遵循`typesFoo.d.ts`，例如`/types/typesFoo.d.js` (需要配置一下tsconfig.json)
-
-### 文件后缀
-- 组件文件使用`tsx`作为文件后缀
-- 样式文件使用`sass`作为文件后缀
-- 普通业务文件使用`ts`作为文件后缀
-- ts声明文件使用`.d.ts`作为文件后缀
-- 特殊文件根据框架或组件要求选择后缀`.weapp.js`
-
-### 变量命名
-- 功能性文件如(封装taro.showToast()), 导出变量命名为**大驼峰**规范.以便在组件中使用.
-- 常量使用 `_AABB`
-- props使用 `aa-bb`
-
-### css BEM STYLE
-- 布局`.g-`, 模块`.m-`, 元件`.u-`, 功能`.f-`, 皮肤`.s-`
-- Bem 是块（block）、元素（element）、修饰符（modifier）的简写
-  - `-` 中划线 ：仅作为连字符使用，表示某个块或者某个子元素的多单词之间的连接记号。
-  - `__` 双下划线：双下划线用来连接块和块的子元素
-  - `_` 单下划线：单下划线用来描述一个块或者块的子元素的一种状态
-
-### 插件方面
-- 使用`VScode`的`Prettier`代码格式化程序
-- 使用适用于自己的`ESlint`规则
-
-### 代码提交方面
-- 严格参照 ` Angular Style Commit Message Conventions` 代码提交规范。 `git cz`
-- 分支：开发分支`dev`、 测试分支`test`、 版本发布分支`master`
-
-
---------------------------
-## 封装代码层次方面
-### 请求封装
-- 参照了`axios`的请求方式，对每一次请求进行预览拦截获取错误。
-- 对每一个组件的请求进行了请求提取，方面后期管理优化。
-
-### 加载封装
-- 使用`taro-ui`在每一次长时间等待等处理方面进行了加载动画。
-
-### rudex封装
-
-### ...
-
-### [其他功能封装详见更新计划日志](./TODO.md)
-
-
---------------------------
-## 性能
-- 首屏时间不超过 5 秒
-- 渲染时间不超过 500ms
-- 一个执行周期内脚本运行时间不超过 1 秒
-- 每秒调用setData的次数不超过 20 次
-- setData的数据在JSON.stringify后不超过 256KB
-- setData传入的所有数据都在模板渲染中有相关依赖
-- 页面WXML节点少于 1000 个，节点树深度少于 30 层，子节点数不大于 60 个
-- 所有图片均开启 HTTP 缓存
-- 图片宽高都不超过实际显示宽高的3倍
-- 所有网络请求都在 1 秒内返回结果
-- 每秒通过wx.request发起的请求数不超过 10 个
-- 每秒发起的图片请求数不超过 20 个
-- 3 分钟以内同一个url请求不出现两次回包大于 128KB 且一模一样的内容
-
-## 体验
-### 开启惯性滚动 
-- wxss中带有overflow: scroll的元素，在 iOS 下需要设置-webkit-overflow-scrolling: touch样式
-### 不使用:active伪类，并使用hover-class替换:active
-### 显示的高/宽与原图的高/宽不超过 15%
-### 可点击元素的宽高都不小于 20px 
-### position: fixed的可交互组件渲染在安全区域内(iphone X)
-### 合理的颜色搭配
-- 较大字体（font-size >= 24px，或同时满足font-size >= 19px与font-weight >= 700），文字颜色和背景颜色的对比度不小于3
-- 其他字体，文字颜色和背景颜色的对比度不小于4.5
-### 关于加载那些事
-- taro-ui的loading
-- `page-meta` `navigation-bar` 导航栏加载，体验会更好
-
---------------------------
-## 性能体验优化实践总结
-### scss
-- app.scss 中提取该程序中主流字体、颜色、布局等
-- 兼容性问题（iphone x兼容等）
-
-### config、project.config.json
-- `config-index.js` 配置别名alias
-- `project.config` setting配置
-
-### 代码规范上（参照小程序性能优化、性能评分介绍）
-- 将`props`设置默认值、类型分析
-- `setState` 合并
-- 合理运用`componentWillPreload`进行数据预加载
-- 尽量避免在 componentDidMount 中调用 this.setState， 会导致触发更新
-- 不要在 componentWillUpdate/componentDidUpdate/render 中调用 this.setState
-- 所有定时器的回调执行时所在的页面都与设置定时器的页面一致
-- 涉及到的动画尽量避免使用本组件页面的`state`，尽量提取，并使用小程序的动画api。
-- 适当时候开启后台运行能力，后台定位
-- 监听网络状态变化
-- 监听小程序内存不足警告
-- 版本兼容
-
-### 工具资源方面
-- 实时日志 (开发->运维中心->实时日志)
-- 小程序测速 (开发 -运维中心 -小程序测速)
-
-### 硬件方面
-- 开启周期性更新
-- 开启预拉取数据
-
-### 打包处理方面
-- 使用分包
-- 分包预下载
-- 独立分包
-
-
---------------------------
-## In the project directory, you can run:
+## In the project directory, you can run
 ### `install`
 - `yarn`
 
+### `examination`
+- `taro info`
+- `taro doctor`
+
 ### `dev & build`
-- `yarn dev:weapp`
-- `yarn build:weapp`
+- `yarn dev:weapp` `yarn dev:h5`
+- `yarn build:weapp` `yarn build:h5`
 
 ### `update`
 - `yarn global add @tarojs/cli@[version]`
 - `taro update self [version]`
 - `taro update project [version]`
 
-### `examination`
-- `taro info`
-- `taro doctor`
+### 预览时降低包的大小
+```bash
+# Mac
+$ NODE_ENV=production taro build --type weapp --watch
+
+# Windows
+$ set NODE_ENV=production && taro build --type weapp --watch
+```
+
+## 一、构建工具配置
+### 1.1 集成`Git`
+```bash
+yarn add -g commitizen cz-conventional-changelog
+
+echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+
+yarn add -D commitizen cz-conventional-changelog
+
+yarn add -D husky @commitlint/cli @commitlint/config-conventional
+```
+
+package.json中配置
+```js
+"script": {
+    "commit": "git-cz",
+},
+"config": {
+  "commitizen": {
+    "path": "node_modules/cz-conventional-changelog"
+  }
+},
+"husky": {
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  }
+}
+```
+
+新建.commitlintrc
+```js
+module.exports = {
+    extends: ['@commitlint/config-conventional']
+};
+```
+
+自动生成CHANGELOG
+```bash
+yarn add -D standard-version
+```
+
+```js
+"script": {
+  "release": "standard-version"
+}
+```
+
+```bash
+git add .
+git cz
+npm run release
+git push
+```
+
+### 1.2 `config/index`
+`alias`
+```js
+// config/index.js
+
+const path = require('path')
+const config = {
+  alias: {
+    '@/src/': path.resolve(__dirname, '..', 'src')
+  },
+  h5: {
+  + publicPath: process.env.NODE_ENV === 'development' ? '/' : './',
+  + esnextModules: ['taro-ui'],
+  + router: {
+      mode: 'hash',
+      customRoutes: {
+        '/pages/index/index': '/index'
+      }
+    }
+  }
+}
+```
+
+### 1.3 `.eslintrc`
+```js
+module.exports = {
+  'extends': ['taro/react'],
+  "rules": {
+    "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
+    "import/no-commonjs": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
+  }
+}
+```
+
+### 1.4 `.gitignore`
+```bash
+dist/
+deploy_versions/
+.temp/
+.rn_temp/
+node_modules/
+.DS_Store
+yarn.lock
+yarn-error.log
+package-lock.json
+```
+
+### 1.5 `project.config.json`
+```json
+{
+  + "appid": "xxxx",
+  + "minified": true,
+}
+```
+
+### 1.6 `babel.config.js`
+```
++ "exclude": '' // /mapbox.*\.js$/
+```
+
+### 1.7 `global.d.ts`
+
+### 1.8 `tsconfig.json`
 
 
---------------------------
-## 更新日志
-- 完整日志请点击 [TODO.md](./TODO.md)。
+## 二、源码文件`src`
+### 2.1 `assets`
 
+### 2.2 `components`
+```
+| loading
+  -| 加载动画
+| skeleton-screen
+  -| 骨架屏
+```
 
---------------------------
-## 目录结构
-- 完整目录结构请点击 [TREER.md](./TREER.md)。
+### 2.3 `pages`
+`test`
+```
++ class-template.tsx // class 模板
++ hook-template.tsx // hook 模板
+```
+
+### 2.4 `services`
+**自定义封装`taro-request`**
+- `promise`
+- 响应拦截
+- 状态统一处理
+
+### 2.5 `utils`
+```
+| h5
+| weapp
+  -| can_use.weapp.ts // 检查API是否可用
+  -| can_version.weapp.ts // 检查版本更新
+| custom_hook.ts // 自定义Hook
+| custom_toast.ts // 自定义提示信息
+| custom_storage.ts // 自定义缓存
+```
+
+### 2.6 `app.scss`
+```scss
+// 体验优化
+// -wxss中带有overflow: scroll的元素，在iOS下需要设置-webkit-overflow-scrolling: touch样式
+.u-scroll-element {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+// -position: fixed的可交互组件渲染在安全区域内(iPhone X 兼容)
+.u-fixed-element {
+  position: fixed;
+  padding-bottom: env(safe-area-inset-bottom);
+  // padding-bottom: constant(safe-area-inset-bottom);
+}
+// 在 H5 模式下将会编译成 margin-bottom: 50px，在小程序模式下则会忽略
+.u-h5-fixed {
+  bottom: 0;
+  margin-bottom: taro-tabbar-height;
+}
+```

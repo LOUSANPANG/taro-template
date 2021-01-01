@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-import ShowToast from './show_toast'
+import ShowToast from './custom_toast'
 
 
 /**
@@ -20,7 +20,7 @@ export const SetStorage = ( key: string, data: any, ifToast: boolean = false ): 
     },
 
     fail() {
-      ShowToast('存储失败', 20000)
+      ShowToast('存储失败', 2000)
     }
   })
 }
@@ -33,19 +33,19 @@ export const SetStorageSync = ( key: string, data: any, ifToast:boolean = false 
     ifToast && ShowToast('存储成功')
 
   } catch (e) {
-    ShowToast('存储缓存失败', 20000)
+    ShowToast('存储缓存失败', 2000)
   }
 }
 
 
 // 同步读取缓存[实际工作中暂未用到异步读取缓存][存储数据量暂时不是很大]
-export const GetStorageSync = ( key: string ): void => {
+export const GetStorageSync = ( key: string ) => {
   try {
     const _GETDATA = Taro.getStorageSync(key)
     if (_GETDATA) return _GETDATA
 
   } catch (e) {
-    ShowToast('读取缓存失败', 20000)
+    ShowToast('读取缓存失败', 2000)
   }
 }
 
@@ -59,7 +59,7 @@ export const RemoveStorage = ( key: string, ifToast: boolean = false ): void => 
     },
 
     fail() {
-      ShowToast('清除存储失败', 20000)
+      ShowToast('清除存储失败', 2000)
     }
   })
 }
@@ -72,7 +72,7 @@ export const RemoveStorageSync = ( key: string, ifToast: boolean = false ): void
     ifToast && ShowToast('清除存储成功')
 
   } catch (e) {
-    ShowToast('清除存储失败', 20000)
+    ShowToast('清除存储失败', 2000)
   }
 }
 
@@ -85,7 +85,7 @@ export const ClearStorage = ( ifToast: boolean = false ): void => {
     },
 
     fail() {
-      ShowToast('清除存储失败', 20000)
+      ShowToast('清除存储失败', 2000)
     }
   })
 }
@@ -98,6 +98,6 @@ export const ClearStorageSync = ( ifToast: boolean = false ): void => {
     ifToast && ShowToast('清除存储成功')
 
   } catch (e) {
-    ShowToast('清除存储失败', 20000)
+    ShowToast('清除存储失败', 2000)
   }
 }

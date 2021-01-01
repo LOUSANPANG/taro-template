@@ -4,8 +4,7 @@ const getBaseUrl = (): string => {
   let BASE_URL: string = ''
 
   process.env.NODE_ENV === 'development'
-    //开发环境
-    ? BASE_URL = 'https://jsonplaceholder.typicode.com'
+    ? BASE_URL = ''
     // 生产环境
     : BASE_URL = ''
 
